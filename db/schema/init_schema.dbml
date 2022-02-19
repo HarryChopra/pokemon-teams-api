@@ -1,15 +1,15 @@
-Table trainer as T {
-  id serial [pk] // bigserial 
+Table trainers as T {
+  id serial [pk]// bigserial 
   name varchar [NOT NULL]
-  created_at timestampz [NOT NULL, default:`now()`]
+  created_at timestamptz [NOT NULL, default:`now()`]
 }
 
-Table pokemon as P {
+Table pokemons as P {
   id serial [pk]
   trainer_id serial [NOT NULL]
   species varchar [NOT NULL]
   nickname varchar [NOT NULL]
-  created_at timestampz [NOT NULL, default:`now()`]
+  created_at timestamptz [NOT NULL, default:`now()`]
 }
 
 ref: P.trainer_id > T.id
