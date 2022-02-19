@@ -13,3 +13,5 @@ CREATE TABLE "pokemons" (
 );
 
 ALTER TABLE "pokemons" ADD FOREIGN KEY ("trainer_id") REFERENCES "trainers" ("id");
+
+CREATE INDEX ON "pokemons" ("trainer_id");

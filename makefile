@@ -18,4 +18,7 @@ migrateup:
 migratedown:
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/pokemon_teams?sslmode=disable" -verbose down
 
-PHONY: run postgres createdb dropdb migrateup migratedown
+sqlc:
+	sqlc generate
+
+PHONY: run postgres createdb dropdb migrateup migratedown sqlc

@@ -10,6 +10,9 @@ Table pokemons as P {
   species varchar [NOT NULL]
   nickname varchar [NOT NULL]
   created_at timestamptz [NOT NULL, default:`now()`]
+  indexes{
+    trainer_id
+    }
 }
 
 ref: P.trainer_id > T.id
